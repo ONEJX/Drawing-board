@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas')
+        const ctx = canvas.getContext('2d')
+        canvas.height = document.documentElement.clientHeight
+        canvas.width = document.documentElement.clientWidth
+        ctx.fillStyle = 'black'
+        ctx.strokeStyle = 'none'
+        let painting = false
+
+        let isTouchDevice = 'ontouchstart' in document.documentElement
+
+        if (isTouchDevice) {
+            canvas.ontouchmove = (e) => {
+                let x = e.touches[0].clientX
+                let y = e.touches[0].clientY
+                ctx.beginPath();
+                ctx.arc(x, y, 6, 0, 2 * Math.PI);
+                ctx.fill()
+                ctx.stroke();
+            }
+        } else {
+            canvas.onmousedown = () => {
+                painting = true;
+            }
+
+            canvas.onmousemove = (e) => {
+                if (painting === true) {
+                    ctx.beginPath();
+                    ctx.arc(e.clientX, e.clientY, 6, 0, 2 * Math.PI);
+                    ctx.fill()
+                    ctx.stroke();
+                }
+            }
+            canvas.onmouseup = () => {
+                painting = false;
+            }
+        }
+    </script>
+</body>
+
+</html>
