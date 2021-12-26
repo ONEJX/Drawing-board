@@ -9,14 +9,17 @@
 </head>
 
 <body>
-    <canvas id="canvas"></canvas>
+    <div id="move">橡皮擦</div>
+    <div id="green"></div>
+    <div id="black"></div>
+    <div id="red"></div>
+    <canvas id="canvas">
+    </canvas>
     <script>
         const canvas = document.getElementById('canvas')
         const ctx = canvas.getContext('2d')
         canvas.height = document.documentElement.clientHeight
         canvas.width = document.documentElement.clientWidth
-        ctx.fillStyle = 'black'
-        ctx.strokeStyle = 'none'
         ctx.lineWidth = 10;
         ctx.lineCap = 'round';
         let painting = false
@@ -57,6 +60,20 @@
             canvas.onmouseup = () => {
                 painting = false;
             }
+        }
+
+        green.onclick = () => {
+            ctx.strokeStyle = 'blue'
+        }
+        black.onclick = () => {
+            ctx.strokeStyle = 'black'
+        }
+        red.onclick = () => {
+            ctx.strokeStyle = 'red'
+        }
+        move.onclick = () => {
+            ctx.strokeStyle = 'white'
+            ctx.lineWidth = 3;
         }
     </script>
 </body>

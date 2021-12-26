@@ -5,4 +5,45 @@
 }
 #canvas{
     display: block;
+    position: relative;
+}
+#green{
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    position: absolute;
+    top:10px;
+    left: 50%;
+    transform: translateY(-10px);
+    z-index: 1;
+}
+#black{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    top:10px;
+    left: 45%;
+    transform: translateY(-10px);
+    z-index: 1;
+}
+#red{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    position: absolute;
+    top:10px;
+    left: 40%;
+    transform: translateY(-10px);
+    z-index: 1;
+}
+#move{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    white-space: nowrap;
+    top:10px;
+    left: 20%;
+    transform: translateY(-10px);
+    z-index: 1;
 }
