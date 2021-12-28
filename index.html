@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div id="move">橡皮擦</div>
+    <div id="eraser">橡皮擦</div>
     <div id="green"></div>
     <div id="black"></div>
     <div id="red"></div>
@@ -72,9 +72,9 @@
         red.onclick = () => {
             ctx.strokeStyle = 'red'
         }
-        move.onclick = () => {
+        eraser.onclick = () => {
             ctx.strokeStyle = 'white'
-            ctx.lineWidth = 3;
+            ctx.lineWidth = 6;
         }
     </script>
 </body>
