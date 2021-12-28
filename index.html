@@ -21,7 +21,6 @@
         const ctx = canvas.getContext('2d')
         canvas.height = document.documentElement.clientHeight
         canvas.width = document.documentElement.clientWidth
-        ctx.lineWidth = 10;
         ctx.lineCap = 'round';
         let painting = false
 
@@ -65,12 +64,15 @@
 
         green.onclick = () => {
             ctx.strokeStyle = 'blue'
+            ctx.lineWidth = 10;
         }
         black.onclick = () => {
             ctx.strokeStyle = 'black'
+            ctx.lineWidth = 10;
         }
         red.onclick = () => {
             ctx.strokeStyle = 'red'
+            ctx.lineWidth = 10;
         }
         eraser.onclick = () => {
             ctx.strokeStyle = 'white'
